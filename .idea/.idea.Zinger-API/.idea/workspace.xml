@@ -28,19 +28,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9768b3e5-390b-4075-9e3c-bba51217d030" name="Default Changelist" comment="Modified Files">
-      <change afterPath="$PROJECT_DIR$/Zinger-API/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zinger-API/Models/Agent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zinger-API/Models/ApplicationUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zinger-API/Models/Customer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zinger-API/Models/MenuItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zinger-API/Models/Order.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zinger-API/Models/OrderItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zinger-API/Models/Restaurant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zinger-API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zinger-API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zinger-API/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zinger-API/WeatherForecast.cs" beforeDir="false" />
+    <list default="true" id="9768b3e5-390b-4075-9e3c-bba51217d030" name="Default Changelist" comment="Added Models and Configured Relationships">
+      <change beforePath="$PROJECT_DIR$/Zinger-API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Zinger-API/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Zinger-API/Zinger-API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Zinger-API/Zinger-API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zinger-API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Zinger-API/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +53,8 @@
         <option value="$PROJECT_DIR$/Zinger-API/Models/OrderItem.cs" />
         <option value="$PROJECT_DIR$/Zinger-API/Models/MenuItem.cs" />
         <option value="$PROJECT_DIR$/Zinger-API/Data/ApplicationDbContext.cs" />
+        <option value="$PROJECT_DIR$/Zinger-API/Startup.cs" />
+        <option value="$PROJECT_DIR$/Zinger-API/appsettings.json" />
       </list>
     </option>
   </component>
@@ -77,6 +70,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -140,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607268181632</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Models and Configured Relationships">
+      <created>1607271642135</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607271642135</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +166,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Project Created" />
     <MESSAGE value="Modified Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified Files" />
+    <MESSAGE value="Added Models and Configured Relationships" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Models and Configured Relationships" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607268295890">
