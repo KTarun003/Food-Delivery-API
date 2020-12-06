@@ -28,10 +28,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9768b3e5-390b-4075-9e3c-bba51217d030" name="Default Changelist" comment="Added Models and Configured Relationships">
-      <change beforePath="$PROJECT_DIR$/Zinger-API/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Zinger-API/Startup.cs" afterDir="false" />
+    <list default="true" id="9768b3e5-390b-4075-9e3c-bba51217d030" name="Default Changelist" comment="Added Migrations">
+      <change afterPath="$PROJECT_DIR$/Zinger-API/Controllers/OrdersController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Zinger-API/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zinger-API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zinger-API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zinger-API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Zinger-API/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Zinger-API/Zinger-API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Zinger-API/Zinger-API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zinger-API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Zinger-API/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +57,9 @@
         <option value="$PROJECT_DIR$/Zinger-API/Data/ApplicationDbContext.cs" />
         <option value="$PROJECT_DIR$/Zinger-API/Startup.cs" />
         <option value="$PROJECT_DIR$/Zinger-API/appsettings.json" />
+        <option value="$PROJECT_DIR$/Zinger-API/Properties/launchSettings.json" />
+        <option value="$PROJECT_DIR$/Zinger-API/Controllers/OrdersController.cs" />
+        <option value="$PROJECT_DIR$/Zinger-API/Controllers/UserController.cs" />
       </list>
     </option>
   </component>
@@ -141,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607271642135</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Migrations">
+      <created>1607272231964</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607272231964</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,13 +179,30 @@
     <MESSAGE value="Project Created" />
     <MESSAGE value="Modified Files" />
     <MESSAGE value="Added Models and Configured Relationships" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Models and Configured Relationships" />
+    <MESSAGE value="Added Migrations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Migrations" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607268295890">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607268295890" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1607278210815">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607278210815" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1607278210814">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607278210814" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1607278210814">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607278210814" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1607278210814">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1607278210814" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607268235575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
