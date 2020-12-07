@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Zinger_API.Data;
 using Zinger_API.Models;
 using Zinger_API.ViewModels;
@@ -46,7 +44,7 @@ namespace Zinger_API.Controllers
 			}
 			if (userVm.Type.Equals("Customer"))
 			{
-				Customer customer = new Customer()
+				Customer customer = new Customer
 				{
 					CustomerId = Guid.NewGuid().ToString(),
 					UserId = userVm.User.UserId
@@ -55,7 +53,7 @@ namespace Zinger_API.Controllers
 			}
 			if (userVm.Type.Equals("Agent"))
 			{
-				Agent agent = new Agent()
+				Agent agent = new Agent
 				{
 					AgentId = Guid.NewGuid().ToString(),
 					UserId = userVm.User.UserId
