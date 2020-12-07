@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Zinger_API.Data;
 using Zinger_API.Models;
 
-namespace Zinger_API.Controllers.RestaurantAPI
+namespace Zinger_API.Controllers
 {
-	[Route("api/restaurant/menu")]
+	[Route("api/menu")]
 	public class MenuController : Controller
 	{
 		private readonly ApplicationDbContext _context;
@@ -24,7 +24,7 @@ namespace Zinger_API.Controllers.RestaurantAPI
 			return _context.MenuItems.Where(m => m.RestaurantId.Equals(restId)).ToList();
 		}
 		
-		// POST : api/restaurant/menu/{restaurantId}
+		// POST : api/restaurant/menu
 		[HttpPost]
 		public ActionResult<IEnumerable<MenuItem>> AddMenu([FromBody] IEnumerable<MenuItem> menu)
 		{
@@ -33,14 +33,11 @@ namespace Zinger_API.Controllers.RestaurantAPI
 			return CreatedAtAction("AddMenu", menu);
 		}
 		
-		// PUT : api/restaurant/menu/{restaurantId}
+		// PUT : api/restaurant/menu
 		[HttpPut]
 		public ActionResult<IEnumerable<MenuItem>> UpdateMenu([FromBody] IEnumerable<MenuItem> menu)
 		{
-			foreach (var item in menu)
-			{
-				_context.MenuItems.Update(item);
-			}
+			_context.MenuItems.UpdateRange(menu);
 			_context.SaveChanges();
 			return NoContent();
 		}

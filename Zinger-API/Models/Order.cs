@@ -23,6 +23,8 @@ namespace Zinger_API.Models
 
 		public float Amount { get; set; }
 
+		public string OrderStatus { get; set; }
+
 		public Agent Agent { get; set; }
 
 		public Customer Customer { get; set; }

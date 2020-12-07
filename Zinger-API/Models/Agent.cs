@@ -13,6 +13,8 @@ namespace Zinger_API.Models
 
 		public string UserId { get; set; }
 
+		public string AgentStatus { get; set; }
+
 		public ApplicationUser User { get; set; }
 		
 		public ICollection<Order> Orders { get; set; }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
@@ -17,11 +16,34 @@ namespace Zinger_API.Controllers
 		{
 			_context = context;
 		}
-		// GET
+		
+		// GET : api/orders
 		[HttpGet]
 		public ActionResult<IEnumerable<Order>> Index()
 		{
 			return _context.Orders.ToList();
+		}
+		
+		// POST : api/orders
+		[HttpPost]
+		public ActionResult<Order> AddOrder([FromBody] Order order)
+		{
+			foreach (var agent in _context.Agents.ToList().Where(agent => agent.AgentStatus.Equals("Ready")))
+			{
+				order.AgentId = agent.AgentId;
+				break;
+			}
+			_context.Orders.Add(order);
+			_context.SaveChanges();
+			return CreatedAtAction("AddOrder", order);
+		}
+
+		[HttpPut]
+		public ActionResult UpdateOrder([FromBody] Order order)
+		{
+			_context.Orders.Update(order);
+			_context.SaveChanges();
+			return NoContent();
 		}
 	}
 }
