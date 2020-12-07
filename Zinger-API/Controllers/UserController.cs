@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Zinger_API.Data;
 using Zinger_API.Models;
+using Zinger_API.ViewModels;
 
 namespace Zinger_API.Controllers
 {
@@ -21,30 +22,48 @@ namespace Zinger_API.Controllers
 			_context = context;
 		}
 		
+		// GET : api/users
 		[HttpGet]
 		public ActionResult<IEnumerable<ApplicationUser>> GetAllUsers()
 		{
-			
 			return _context.Users.ToList();
 		}
 		
 		// POST : api/users
 		[HttpPost]
-		public async Task<ActionResult<ApplicationUser>> CreateUser(ApplicationUser user)
+		public async Task<ActionResult<ApplicationUser>> CreateUser(UserVm userVm)
 		{
-			user.UserId = Guid.NewGuid().ToString();
-			await _context.Users.AddAsync(user);
-			// if (type.Equals("Restaurant"))
-			// {
-			// 	Restaurant restaurant = new Restaurant()
-			// 	{
-			// 		RestaurantId = Guid.NewGuid().ToString(),
-			// 		UserId = obj.user.UserId
-			// 	};
-			// 	await _context.Restaurants.AddAsync(restaurant);
-			// }
+			userVm.User.UserId = Guid.NewGuid().ToString();
+			await _context.Users.AddAsync(userVm.User);
+			if (userVm.Type.Equals("Restaurant"))
+			{
+				Restaurant restaurant = new Restaurant()
+				{
+					RestaurantId = Guid.NewGuid().ToString(),
+					UserId = userVm.User.UserId
+				};
+				await _context.Restaurants.AddAsync(restaurant);
+			}
+			if (userVm.Type.Equals("Customer"))
+			{
+				Customer customer = new Customer()
+				{
+					CustomerId = Guid.NewGuid().ToString(),
+					UserId = userVm.User.UserId
+				};
+				await _context.Customers.AddAsync(customer);
+			}
+			if (userVm.Type.Equals("Agent"))
+			{
+				Agent agent = new Agent()
+				{
+					AgentId = Guid.NewGuid().ToString(),
+					UserId = userVm.User.UserId
+				};
+				await _context.Agents.AddAsync(agent);
+			}
 			await _context.SaveChangesAsync();
-			return CreatedAtAction("CreateUser", new {id = user.UserId}, user);
+			return CreatedAtAction("CreateUser", new {id = userVm.User.UserId}, userVm.User);
 		}
 	}
 }
