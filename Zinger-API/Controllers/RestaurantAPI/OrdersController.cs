@@ -45,20 +45,6 @@ namespace Zinger_API.Controllers.RestaurantAPI
 			return orders;
 		}
 		
-		// POST : api/restaurant/orders
-		[HttpPost]
-		public ActionResult<Order> AddOrder([FromBody] Order order)
-		{
-			foreach (var agent in _context.Agents.ToList().Where(agent => agent.AgentStatus.Equals("Ready")))
-			{
-				order.AgentId = agent.AgentId;
-				break;
-			}
-			_context.Orders.Add(order);
-			_context.SaveChanges();
-			return CreatedAtAction("AddOrder", order);
-		}
-
 		//PUT : api/restaurant/orders
 		[HttpPut]
 		public ActionResult UpdateOrder([FromBody] Order order)
