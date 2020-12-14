@@ -23,9 +23,9 @@ namespace Zinger_API.Controllers.RestaurantAPI
 		{
 			List<Order> orders = new List<Order>();
 			List<OrderItem> orderItems = _context.OrderItems.ToList();
-			if (status.Equals("Pending"))
+			if (status.Equals("Cooking"))
 			{
-				orders = _context.Orders.Where(o => o.RestaurantId.Equals(id) && o.OrderStatus.Equals("Pending")).ToList();
+				orders = _context.Orders.Where(o => o.RestaurantId.Equals(id) && o.OrderStatus.Equals("Cooking")).ToList();
 			}
 			else
 			{

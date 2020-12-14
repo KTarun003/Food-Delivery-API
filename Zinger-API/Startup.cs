@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Npgsql;
 using Zinger_API.Data;
 
 namespace Zinger_API
@@ -27,8 +28,22 @@ namespace Zinger_API
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+			var databaseUri = new Uri(databaseUrl ?? "postgres://hmcmqoflybaune:1b56dff898782a7646a9ea9c0b9653363de1c4b4fcb734ca22005db35ef7619c@ec2-54-75-225-52.eu-west-1.compute.amazonaws.com:5432/devv6u89a8t30s");
+			var userInfo = databaseUri.UserInfo.Split(':');
+
+			var builder = new NpgsqlConnectionStringBuilder
+			{
+				Host = databaseUri.Host,
+				Port = databaseUri.Port,
+				Username = userInfo[0],
+				Password = userInfo[1],
+				Database = databaseUri.LocalPath.TrimStart('/'),
+				SslMode = SslMode.Require,
+				TrustServerCertificate = true
+			};
 			services.AddDbContext<ApplicationDbContext>(options =>
-				options.UseNpgsql(Configuration.GetConnectionString("LocalDb")));
+					options.UseNpgsql(builder.ToString()));
 			services.AddControllers();
 			services.AddControllers().AddNewtonsoftJson(options =>
 				options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
