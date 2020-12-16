@@ -18,8 +18,8 @@ namespace Zinger_API.Controllers.RestaurantAPI
 		}
 		
 		// GET : api/restaurant/orders/id
-		[HttpGet("{id}")]
-		public ActionResult<IEnumerable<Order>> Index(string id,[FromBody] string status)
+		[HttpGet("{id}/{status}")]
+		public ActionResult<IEnumerable<Order>> Index(string id, string status)
 		{
 			List<Order> orders = new List<Order>();
 			List<OrderItem> orderItems = _context.OrderItems.ToList();
